@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gdpr.com.tr — Veri Mahremiyeti Bilgi Merkezi</title>
+<meta name="description" content="KVKK ve GDPR coğrafyasının etkileşimli atlası — bilingual TR/EN knowledge hub.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body data-lang="tr">
+
+<div class="lang-toggle embed-lang-toggle" role="group" aria-label="Language">
+  <button data-lang-btn="tr" class="active">TR</button>
+  <button data-lang-btn="en">EN</button>
+</div>
+
+<main class="dashboard" id="dashboard">
+  <aside class="rail rail-left">
+    <section class="panel panel-list">
+      <header class="panel-head">
+        <h2 data-i18n="dashListTitle">Ülkeler</h2>
+        <span class="panel-count" id="list-count">31</span>
+      </header>
+      <div class="panel-filters">
+        <button class="filter-chip active" data-filter="all" data-i18n="filterAll">Hepsi</button>
+        <button class="filter-chip" data-filter="KVKK">KVKK</button>
+        <button class="filter-chip" data-filter="GDPR" data-i18n="filterGdpr">GDPR</button>
+        <button class="filter-chip" data-filter="GDPR (EEA)" data-i18n="filterEea">EEA</button>
+      </div>
+      <div class="panel-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="list-filter" placeholder="" data-i18n-placeholder="searchPlaceholder">
+      </div>
+      <div class="list-scroll" id="country-list"></div>
+    </section>
+
+    <section class="panel panel-compare">
+      <header class="panel-head">
+        <h2 data-i18n="dashCompareTitle">Karşılaştır</h2>
+        <button class="btn-text" id="compare-clear" data-i18n="compareClear">Temizle</button>
+      </header>
+      <div class="compare-slots" id="compare-slots"></div>
+      <div class="compare-cta">
+        <button class="btn-primary" id="compare-show-btn" disabled>
+          <span data-i18n="compareShowTable">Tabloyu Aç</span>
+          <span class="arrow">↓</span>
+        </button>
+      </div>
+    </section>
+  </aside>
+
+  <section class="center">
+    <div class="globe-frame">
+      <div class="globe-decor" data-i18n="globeLabel">— Atlas Mundi Privaticus —</div>
+      <canvas id="globe-canvas"></canvas>
+      <div class="globe-loading" id="globe-loading" data-i18n="globeLoading">Küre yükleniyor…</div>
+      <div class="globe-hint" data-i18n="globeHint">Sürükle · küreyi döndür · ülkeye tıkla</div>
+      <div class="globe-corner-stat">
+        <strong>31</strong>
+        <span data-i18n="globeStat">yetki alanı</span>
+      </div>
+    </div>
+  </section>
+
+  <aside class="rail rail-right">
+    <section class="panel panel-card" id="country-card">
+      <div class="card-empty" id="card-empty">
+        <div class="card-empty-art">◐</div>
+        <h3 data-i18n="cardEmptyTitle">Bir ülke seçin</h3>
+        <p data-i18n="cardEmptyBody">Küreden tıklayın veya soldaki listeden bir ülke seçin. Yetkili otorite, ceza üst sınırı ve örnek kararlar burada görünecek.</p>
+      </div>
+      <div class="card-body" id="card-body" hidden></div>
+    </section>
+  </aside>
+</main>
+
+<div class="globe-tooltip" id="globe-tooltip"></div>
+
+<section class="compare-table-section" id="compare-table-section">
+  <div class="compare-table-wrap" id="compare-table-wrap"></div>
+  <div class="compare-empty" id="compare-empty">
+    <div class="compare-empty-art">⚖</div>
+    <p data-i18n="compareEmptyDash">Karşılaştırma tablosu için en az iki ülke seçin.</p>
+  </div>
+</section>
+
+<div class="picker-backdrop" id="picker-backdrop"></div>
+<div class="picker" id="picker" aria-hidden="true" role="dialog">
+  <div class="picker-head">
+    <h4 data-i18n="pickerTitle">Ülke seçin</h4>
+    <button class="picker-close" id="picker-close" aria-label="Close">×</button>
+  </div>
+  <div class="picker-search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="picker-filter" placeholder="" data-i18n-placeholder="searchPlaceholder">
+  </div>
+  <div class="picker-list" id="picker-list"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="./world-data.js"></script>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+
+</body>
+</html>

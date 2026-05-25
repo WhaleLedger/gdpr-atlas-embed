@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "gdpr.com.tr Country Factsheet",
+  "description": "Two-tier bilingual schema. summary.* powers the dashboard card; details.* powers the deep-dive panel and the Markdown doc.",
+  "type": "object",
+  "required": ["code", "iso_n3", "framework", "year", "lastUpdated", "summary", "details", "sources"],
+  "properties": {
+    "code":        { "type": "string", "description": "ISO 3166-1 alpha-2 (e.g. TR, DE). Use EU for the umbrella entry." },
+    "iso_n3":      { "type": "string", "description": "ISO 3166-1 numeric, 3-digit zero-padded (e.g. 792, 276). Empty string for non-country entries." },
+    "flag":        { "type": "string", "description": "Emoji flag." },
+    "framework":   { "type": "string", "enum": ["KVKK", "GDPR", "GDPR (EEA)"] },
+    "year":        { "type": "integer", "description": "Year the current framework entered into force." },
+    "lastUpdated": { "type": "string", "format": "date", "description": "ISO date this factsheet was last verified." },
+
+    "summary": {
+      "type": "object",
+      "required": ["tr", "en"],
+      "properties": {
+        "tr": { "$ref": "#/$defs/summaryTier" },
+        "en": { "$ref": "#/$defs/summaryTier" }
+      }
+    },
+
+    "details": {
+      "type": "object",
+      "required": ["tr", "en"],
+      "properties": {
+        "tr": { "$ref": "#/$defs/detailsTier" },
+        "en": { "$ref": "#/$defs/detailsTier" }
+      }
+    },
+
+    "sources": {
+      "type": "array",
+      "description": "Authoritative URLs with short titles. Cite per-fact in details.* via inline footnote markers like [^1] or [^2].",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "url"],
+        "properties": {
+          "id":   { "type": "string", "description": "Short ID used as footnote marker, e.g. 'kvkk-2024-amend'." },
+          "title":{ "type": "string" },
+          "url":  { "type": "string", "format": "uri" },
+          "lang": { "type": "string", "enum": ["tr","en","de","fr","es","other"] },
+          "date": { "type": "string", "format": "date" }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "summaryTier": {
+      "type": "object",
+      "description": "Compact fields used by the dashboard right card and chips.",
+      "required": ["name", "lawTitle", "regulator", "regulatorUrl", "summary", "rights", "bases", "maxFine", "extraterritorial", "notable"],
+      "properties": {
+        "name":             { "type": "string" },
+        "lawTitle":         { "type": "string", "description": "Official law title in this language." },
+        "regulator":        { "type": "string" },
+        "regulatorUrl":     { "type": "string", "format": "uri" },
+        "summary":          { "type": "string", "description": "1–2 paragraphs framing the regime and its quirks." },
+        "rights":           { "type": "array", "items": { "type": "string" } },
+        "bases":            { "type": "array", "items": { "type": "string" } },
+        "maxFine":          { "type": "string", "description": "Current maximum administrative fine, including reference year if numeric." },
+        "extraterritorial": { "type": "string" },
+        "notable":          { "type": "string", "description": "Recent enforcement headlines, comma-separated." }
+      }
+    },
+
+    "detailsTier": {
+      "type": "object",
+      "description": "Long-form, citation-bearing fields. Each subsection is a string of Markdown; footnote markers like [^kvkk-2024-amend] reference entries in sources[].",
+      "required": [
+        "overview", "materialScope", "territorialScope", "definitions",
+        "lawfulBases", "rightsLong", "obligations", "crossBorder",
+        "breachNotification", "enforcement", "sectoral", "recentDevelopments"
+      ],
+      "properties": {
+        "overview":           { "type": "string", "description": "History, place in the legal order, relationship to constitution, the personality of the regulator." },
+        "materialScope":      { "type": "string" },
+        "territorialScope":   { "type": "string" },
+        "definitions":        { "type": "string", "description": "Personal data, special categories, controller, processor, joint controllers, etc." },
+        "lawfulBases":        { "type": "string" },
+        "rightsLong":         { "type": "string" },
+        "obligations":        { "type": "string", "description": "ROPA, DPO, DPIA, accountability, vendor management." },
+        "crossBorder":        { "type": "string", "description": "Adequacy, SCC, BCR, derogations, recent guidance, local quirks." },
+        "breachNotification": { "type": "string", "description": "Timeline, threshold, recipients, content requirements." },
+        "enforcement":        { "type": "string", "description": "Cap calculation, mitigating factors, recent 2024–2026 landmark decisions." },
+        "sectoral":           { "type": "string", "description": "Employment, health, children's data, marketing/cookies, financial." },
+        "recentDevelopments": { "type": "string", "description": "Legislative changes, regulator guidance, pending bills (last ~24 months)." },
+        "openIssues":         { "type": "string", "description": "Optional. Pending court referrals, anticipated guidance, contested interpretations." }
+      }
+    }
+  }
+}
