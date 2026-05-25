@@ -841,3 +841,36 @@ footer ul a:hover { color: var(--amber-glow); }
 /* Compare table sits below the 100vh dashboard; the existing "Tabloyu Aç" button
    already scrolls it into view. No display:none here — JS doesn't toggle an .open class. */
 
+/* Card-empty placeholder: JS sets `hidden` attribute when a country is selected,
+   but the browser-default [hidden]{display:none} loses to the .card-empty{display:flex}
+   rule (same specificity, class rule wins by cascade order). Restore the expected hide. */
+.card-empty[hidden] { display: none; }
+
+/* Floating "back to main site" link, mirrors the lang toggle in the opposite corner.
+   target=_top on the anchor escapes the iframe and navigates the parent page. */
+.embed-home-link {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 13px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(250, 242, 220, 0.9);
+  color: var(--sepia);
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s;
+}
+.embed-home-link:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: rgba(250, 242, 220, 1);
+}
+
