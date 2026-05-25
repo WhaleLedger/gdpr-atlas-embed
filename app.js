@@ -43,8 +43,8 @@
       btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === lang);
     });
     document.title = (lang === 'tr')
-      ? "gdpr.com.tr — Veri Mahremiyeti Bilgi Merkezi"
-      : "gdpr.com.tr — Data Privacy Knowledge Hub";
+      ? "KVKK ve GDPR Atlas: 31 Yetki Alanı Karşılaştırması | gdpr.com.tr"
+      : "KVKK & GDPR Atlas: 31-Jurisdiction Comparison | gdpr.com.tr";
     renderCountryList();
     if (STATE.selectedCode) renderRightCard(STATE.selectedCode); else renderEmptyCard();
     renderCompareSlots();
