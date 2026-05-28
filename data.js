@@ -33,7 +33,7 @@ window.I18N = {
     p2Title: "Yurt Dışı Aktarım",
     p2Body: "GDPR ekosistemi yeterlilik kararları, Standart Sözleşme Maddeleri (SCC) ve Bağlayıcı Şirket Kuralları (BCR) üzerinden işler. Türkiye, Mart 2024 değişikliğiyle benzer bir SCC rejimini benimsemiştir; öncesinde Kurul izni şarttı.",
     p3Title: "İdari Para Cezaları",
-    p3Body: "GDPR azami cezası 20 milyon EUR veya küresel cironun %4'üdür. Türkiye'de 2025 itibarıyla her ihlal için üst sınır yaklaşık 4,49 milyon TL'dir. Tek bir ihlal birden çok yaptırıma yol açabilir.",
+    p3Body: "GDPR azami cezası 20 milyon EUR veya küresel cironun %4'üdür. Türkiye'de 1 Ocak 2026 itibarıyla en yüksek tek başlık 17,09 milyon TL'dir (2025'te 13,62 milyon TL idi). Tek bir ihlal birden çok yaptırıma yol açabilir.",
     footerHubTitle: "gdpr.com.tr Bilgi Merkezi",
     footerHubDesc: "KVKK ve GDPR dünyasını paylaşan profesyoneller için hazırlanmış bağımsız bir bilgi haritası. İçerikler Kurul kararları, EDPB rehberleri ve ulusal DPA güncellemeleriyle yenilenir.",
     footerDisclaimer: "Bu sitedeki içerikler genel bilgilendirme amaçlıdır ve hukuki tavsiye niteliği taşımaz. Somut bir mesele için uzman görüşü alınmalıdır.",
@@ -123,7 +123,7 @@ window.I18N = {
     p2Title: "Cross-Border Transfers",
     p2Body: "The GDPR ecosystem runs on adequacy decisions, Standard Contractual Clauses (SCCs) and Binding Corporate Rules (BCRs). Türkiye adopted a similar SCC regime with the March 2024 amendment; prior to that, Board authorisation was required.",
     p3Title: "Administrative Fines",
-    p3Body: "The GDPR cap is 20 million EUR or 4% of worldwide turnover, whichever is higher. As of 2025, the per-breach ceiling under KVKK is roughly TRY 4.49 million. A single breach can attract multiple stacked sanctions.",
+    p3Body: "The GDPR cap is 20 million EUR or 4% of worldwide turnover, whichever is higher. As of 1 January 2026 the highest single-head ceiling under KVKK is TRY 17.09 million (up from TRY 13.62 million in 2025). A single breach can attract multiple stacked sanctions.",
     footerHubTitle: "gdpr.com.tr Knowledge Hub",
     footerHubDesc: "An independent knowledge map for professionals working across KVKK and GDPR. Updated regularly from Board decisions, EDPB guidelines and national DPA developments.",
     footerDisclaimer: "Information on this site is general in nature and does not constitute legal advice. For specific matters, please consult qualified counsel.",
@@ -196,7 +196,7 @@ window.COUNTRIES = [
       summary: "Türkiye'nin temel kişisel veri rejimi, GDPR'dan büyük ölçüde esinlenmekle birlikte VERBİS kaydı, açık rıza odaklı meşruiyet anlayışı ve yurt dışı aktarımdaki katı izin rejimiyle ayrışır. Mart 2024 değişiklikleriyle özel nitelikli verilerin işlenmesinde ek hukuki sebepler tanınmış ve yurt dışı aktarımda standart sözleşme rejimi getirilmiştir.",
       rights: ["Bilgi talep etme","Erişim","Düzeltme","Silme/yok etme","Aktarım bildirimini isteme","İtiraz","Zararın giderilmesini talep"],
       bases: ["Açık rıza","Kanunda açıkça öngörülmesi","Sözleşmenin kurulması/ifası","Hukuki yükümlülük","Aleniyet","Meşru menfaat","Hak tesisi/koruma"],
-      maxFine: "1.000 TL – 4.488.629 TL (2025; her ihlal başına, yıllık yeniden değerlemeyle)",
+      maxFine: "17.092.242 TL (2026; her ihlal başına, yıllık yeniden değerlemeyle)",
       extraterritorial: "Türkiye'de yerleşik veri sahiplerini hedefleyen yurt dışı veri sorumlularını da kapsar.",
       notable: "Meta/WhatsApp (267 M TL, 2021), Amazon (1,2 M TL, 2020), Google reklam kimlikleri kararı (2023)."
     },
@@ -207,7 +207,7 @@ window.COUNTRIES = [
       summary: "Türkiye's flagship personal-data regime draws heavily on GDPR but diverges through the mandatory VERBİS register, a strongly consent-anchored notion of lawful basis, and historically a strict permit regime for international transfers. The March 2024 amendment added new lawful bases for sensitive data and introduced a Standard Contractual Clauses regime for cross-border transfers.",
       rights: ["Information","Access","Rectification","Erasure / destruction","Onward-transfer notification","Object","Compensation for damages"],
       bases: ["Explicit consent","Expressly provided by law","Necessity for a contract","Legal obligation","Publicly disclosed","Legitimate interests","Establishment/defence of legal rights"],
-      maxFine: "TRY 1,000 – TRY 4,488,629 (2025; per breach, re-valued annually)",
+      maxFine: "TRY 17,092,242 (2026; per breach, re-valued annually)",
       extraterritorial: "Reaches non-Turkish controllers that target data subjects located in Türkiye.",
       notable: "Meta/WhatsApp (TRY 267M, 2021), Amazon (TRY 1.2M, 2020), Google advertising-ID decision (2023)."
     }
